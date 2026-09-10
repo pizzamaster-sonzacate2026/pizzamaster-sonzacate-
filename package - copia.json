@@ -1,0 +1,8 @@
+{
+  "name": "pizza-master-sonzacate",
+  "version": "1.0.0",
+  "description": "Sitio web de pedidos en línea — Pizza Master Sonzacate",
+  "dependencies": {
+    "stripe": "^16.0.0"
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pizza Master Sonzacate — Pide en línea</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo-circle">
+          <span>PIZZA<br/>MASTER</span>
+        </div>
+        <div class="brand-text">
+          <h1>Pizza Master</h1>
+          <p>Sonzacate</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="contact-pill" href="tel:22424897">📞 2442-4897</a>
+        <a class="contact-pill whatsapp" href="https://wa.me/50370164623" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <button id="cart-btn" class="cart-btn">
+          🛒 <span id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO / PROMO DEL DÍA ===================== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>¡Pide tu pizza favorita en línea!</h2>
+      <p>Recién salidita del horno — para recoger o a domicilio</p>
+      <div id="promo-hoy" class="promo-card"></div>
+    </div>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <main class="menu-container" id="menu-container">
+    <!-- Generado por JS -->
+  </main>
+
+  <!-- ===================== CARRITO (panel lateral) ===================== -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h3>Tu pedido</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn" disabled>Continuar al pedido</button>
+    </div>
+  </aside>
+
+  <!-- ===================== MODAL CHECKOUT ===================== -->
+  <div id="checkout-overlay" class="cart-overlay"></div>
+  <div id="checkout-modal" class="checkout-modal">
+    <div class="checkout-modal-header">
+      <h3>Finalizar pedido</h3>
+      <button id="close-checkout">✕</button>
+    </div>
+    <form id="checkout-form" class="checkout-form">
+      <label>Nombre completo
+        <input type="text" name="nombre" required placeholder="Tu nombre" />
+      </label>
+      <label>Teléfono
+        <input type="tel" name="telefono" required placeholder="Ej: 7000-0000" />
+      </label>
+
+      <fieldset>
+        <legend>Entrega</legend>
+        <label class="radio-row">
+          <input type="radio" name="entrega" value="Recoger en tienda" checked />
+          Recoger en tienda
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="entrega" value="Domicilio" />
+          Entrega a domicilio
+        </label>
+      </fieldset>
+
+      <label id="direccion-wrap" style="display:none;">Dirección de entrega
+        <textarea name="direccion" placeholder="Dirección completa, punto de referencia"></textarea>
+      </label>
+
+      <label>Notas del pedido (opcional)
+        <textarea name="notas" placeholder="Ej: sin cebolla, extra queso..."></textarea>
+      </label>
+
+      <fieldset>
+        <legend>Método de pago</legend>
+        <label class="radio-row">
+          <input type="radio" name="pago" value="whatsapp" checked />
+          Efectivo / confirmar por WhatsApp
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="pago" value="tarjeta" />
+          Pagar ahora con tarjeta
+        </label>
+      </fieldset>
+
+      <div class="checkout-summary">
+        <div id="checkout-items-summary"></div>
+        <div class="checkout-total-row">
+          <span>Total a pagar</span>
+          <span id="checkout-total">$0.00</span>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-order-btn" class="submit-order-btn">
+        Enviar pedido por WhatsApp
+      </button>
+      <p id="checkout-error" class="checkout-error"></p>
+    </form>
+  </div>
+
+  <footer class="site-footer">
+    <p><strong>Pizza Master Sonzacate</strong></p>
+    <p>📞 2442-4897 &nbsp;|&nbsp; 💬 WhatsApp 7016-4623 &nbsp;|&nbsp; 📘 Facebook: Pizza Master Sonzacate</p>
+  </footer>
+
+  <script src="menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
